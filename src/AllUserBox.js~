@@ -1,0 +1,28 @@
+import React from 'react';
+import { browserHistory } from "react-router";
+import API from './API';
+
+class AllUserBox extends React.Component{
+	constructor(){
+		super()
+	}
+	toOtherUser(){
+	   var user = this.props.user;
+	   var userid = user.id;
+	   console.log(userid)
+       var url = API.url('otheruser/');
+       browserHistory.push(url+userid);
+	}
+	render(){
+		var username = this.props.user.username;
+		var userid = this.props.user.id;
+		return(
+			<div className="baskerville tc shadow-3 hover-light-red mv4 ml7 w-70 h3 pa5" onClick={this.toOtherUser.bind(this)}>
+				<h1>{username}</h1>
+				<h1>{userid}</h1>
+			</div>
+			);
+	}
+}
+
+module.exports = AllUserBox;

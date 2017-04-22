@@ -1,6 +1,6 @@
 import React from 'react';
 import QuestionList from './QuestionList';
-import Navbar from './Navbar';
+import Navbar from '../Navbar';
 class quiz extends React.Component{
 	constructor(){
 		super()

@@ -13,12 +13,13 @@ import { Provider } from 'react-redux';
 // Routes
 import Login from './Login';
 import Register from './Register';
-import Quiz from './quiz';
-import Navbar from './Navbar';
-import ChildQues1 from './ChildQues1';
-import ChildQues2 from './ChildQues2';
-import ChildQues3 from './ChildQues3';
-import ChildQues4 from './ChildQues4';
+import Quiz from './parent-ques/quiz';
+import ChildQues1 from './memory-game/ChildQues1';
+import ChildQues2 from './nosense-reading/ChildQues2';
+import ChildQues3 from './nosense-writing/ChildQues3';
+import ChildQues4 from './onemin-writing/ChildQues4';
+import ChildQues5 from './click-game/ChildQues5';
+import ChildQues6 from './basic-maths/ChildQues6';
 import style from '../styles/app.scss';
 // ID of the DOM element to mount app on
 const DOM_APP_EL_ID = 'app';
@@ -33,6 +34,8 @@ ReactDOM.render((
     	<Route path='child2' component = {ChildQues2} ></Route>
     	<Route path='child3' component = {ChildQues3} ></Route>
     	<Route path='child4' component = {ChildQues4} ></Route>
+    	<Route path='child5' component = {ChildQues5} ></Route>
+        <Route path='child6' component = {ChildQues6} ></Route>
   </Router>
 ), document.getElementById(DOM_APP_EL_ID));
 

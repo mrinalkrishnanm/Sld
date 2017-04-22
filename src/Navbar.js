@@ -12,7 +12,7 @@ class Navbar extends React.Component{
 		browserHistory.push("/allusers");
 	}
 	toDashboard(){
-		browserHistory.push("/dashboard");
+		browserHistory.push("/quiz");
 	}
 	render(){
 		return(

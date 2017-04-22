@@ -1,8 +1,8 @@
 import React from 'react';
-import Navbar from './Navbar';
+import Navbar from '../Navbar';
 import Modal from 'react-modal';
 
-class ChildQues1 extends React.Component{
+class ChildQues3 extends React.Component{
 	constructor(){
 		super();
         this.state={
@@ -13,7 +13,12 @@ class ChildQues1 extends React.Component{
             modalIsOpen: true
         }
 	}
-
+ 
+    // afterOpenModal() {
+    // // references are now sync'd and can be accessed. 
+    //     this.refs.subtitle.style.color = '#f00';
+    // }
+ 
     closeModal(){
         this.setState({modalIsOpen: false});
     }
@@ -41,27 +46,23 @@ class ChildQues1 extends React.Component{
         var ans_visibility = this.state.ans_visibility
 		return(
             <div>
-              <Navbar />
-              <Modal
+             <Navbar />
+             <Modal
                 isOpen={this.state.modalIsOpen}
                 onAfterOpen={this.afterOpenModal}
                 onRequestClose={this.closeModal}
                 // style={customStyles}
                 contentLabel="Example Modal"
-                >
-                <h1>Memory Game</h1>
-                <h2>Rules</h2>
-                <p>please enter the rules that are to be followed by the parent. This space here tells the parent the about this exercise and the points that are to be noted</p>
-                <button onClick={this.closeModal.bind(this)}>close</button>
-             </Modal>
+            >
+            <h1>No sense passage writing</h1>
+            <h2>Rules</h2>
+            <p>please enter the rules that are to be followed by the parent. This space here tells the parent the about this exercise and the points that are to be noted</p>
+            <button onClick={this.closeModal.bind(this)}>close</button>
+        </Modal>
              <div className="shadow-4 pa6 w-70 mv6 ml7 bg-washed-blue ba b--blue">
 			 <div className={visibility}>
                 <p>Timer:{counter}</p>
-                <h1 className="lh-title">Word 1</h1>
-                <h1 className="lh-title">Word 2</h1>
-                <h1 className="lh-title">Word 3</h1>
-                <h1 className="lh-title">Word 4</h1>
-                <h1 className="lh-title">Word 5</h1>
+                <p>Replace this place here with the no sense writing . This is a writing test that is to be performed by the child.</p>
              </div>
             <button onClick={this.start.bind(this)} className={button_visibility}>Start</button>
              <div className={ans_visibility}>
@@ -77,4 +78,4 @@ class ChildQues1 extends React.Component{
 }
 
 
-module.exports = ChildQues1;
+module.exports = ChildQues3;

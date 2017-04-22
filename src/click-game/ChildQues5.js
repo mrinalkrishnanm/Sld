@@ -6,10 +6,10 @@ class ChildQues5 extends React.Component{
 	constructor(){
 		super();
         this.state={
-            counter: 10,
+            counter: 3,
             modalIsOpen: true,
             button1_visibility:"o-90",
-            button2_visibility:"o-025"
+            button2_visibility:"o-0"
         }
 	}
  
@@ -21,25 +21,12 @@ class ChildQues5 extends React.Component{
     closeModal(){
         this.setState({modalIsOpen: false});
     }
-
+    
     start(){
         this.setState({button2_visibility:"o-90 br-pill"});
-        this.setState({button1_visibility:"o-025"});
+        this.setState({button1_visibility:"o-0"});
     }
-    startGame(){
-        setInterval(this.counterStart.bind(this),1000);
-    }
-    counterStart(){
-        if(this.state.counter>0)
-        {    
-       this.setState({counter: this.state.counter-1});
-       console.log(this.state.counter)
-       }
-       else{
-        this.setState({visibility:"o-025",ans_visibility:"o-90"});
-       }
 
-    }
 	render(){
         var button1_visibility = this.state.button1_visibility
         var button2_visibility = this.state.button2_visibility
@@ -61,7 +48,7 @@ class ChildQues5 extends React.Component{
         </Modal>
               <div className="shadow-4 pa6 w-70 mv6 ml7 bg-washed-blue ba b--blue">
                 <button onClick={this.start.bind(this)} className={button1_visibility}>Start</button>
-                <button className={button2_visibility} onClick={this.startGame.bind(this)}>Click</button>
+                <button className={button2_visibility}>Click</button>
               </div>
             </div>
 			);

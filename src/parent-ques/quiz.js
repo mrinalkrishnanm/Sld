@@ -1,6 +1,8 @@
 import React from 'react';
 import QuestionList from './QuestionList';
 import Navbar from '../Navbar';
+import { browserHistory } from "react-router";
+
 class quiz extends React.Component{
 	constructor(){
 		super()
@@ -26,13 +28,22 @@ class quiz extends React.Component{
         toChild: 0
 		}
 	}
+
+	componentDidMount(){
+		localStorage.setItem('attributes', JSON.stringify(this.state.answers));
+	}
 	ansUpdate(new_answers){
 		this.setState({answers:new_answers})
-		console.log(this.state.answers)
+		localStorage.setItem('attributes', JSON.stringify(this.state.answers));
+		var retrievedObject = localStorage.getItem('attributes');
+		console.log('retrievedObject: ', JSON.parse(retrievedObject));			
 	}
+	//next component il povunenu mumb, update the localStorage to this.state.answers to get apozhathe state.
 	updateChildButton(){
 		var toChild = this.state.toChild
 		this.setState({toChild: toChild + 1})
+		browserHistory.push("/child1");
+
 		//console.log(this.state.toChild);
 
 	}

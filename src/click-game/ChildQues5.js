@@ -1,32 +1,85 @@
 import React from 'react';
 import Navbar from '../Navbar';
 import Modal from 'react-modal';
-
+import { browserHistory } from "react-router";
+import _ from 'lodash';
 class ChildQues5 extends React.Component{
 	constructor(){
 		super();
         this.state={
-            counter: 3,
+            counter: 10,
             modalIsOpen: true,
+            score:5,
             button1_visibility:"o-90",
             button2_visibility:"o-0"
         }
 	}
  
-    // afterOpenModal() {
-    // // references are now sync'd and can be accessed. 
-    //     this.refs.subtitle.style.color = '#f00';
-    // }
  
     closeModal(){
         this.setState({modalIsOpen: false});
     }
     
     start(){
-        this.setState({button2_visibility:"o-90 br-pill"});
         this.setState({button1_visibility:"o-0"});
+        setInterval(this.counterStart.bind(this),3000);
     }
 
+    counterStart(){
+        if(this.state.counter%2==0 && this.state.counter>0)
+        {    
+           var position=Math.floor(Math.random() * 3) + 1;
+           if(position==1){
+               this.setState({button2_visibility:"o-90 ma1"});
+           }
+           else if(position==2){
+               this.setState({button2_visibility:"o-90 ma4"});
+           }
+
+            else if(position==3){
+               this.setState({button2_visibility:"o-90 ma5"});
+           }
+           this.setState({counter: this.state.counter-1});
+            console.log(this.state.counter)
+
+        }
+        else if(this.state.counter==0)
+        {
+            this.setState({button2_visibility:"o-0"});
+             browserHistory.push("/child6");
+
+        }
+        else
+        {
+            this.setState({button2_visibility:"o-0"});
+            this.setState({counter: this.state.counter-1});
+            console.log(this.state.counter)
+
+        }
+        console.log(this.state.score);
+        
+    }
+    submit(){
+        this.setState({score: this.state.score-1});
+        if(this.state.score<5)
+        {
+            var retrievedObject = localStorage.getItem('attributes');
+            var answers = JSON.parse(retrievedObject);
+            var attribute = ["DA","ED"]
+            for (var key in answers) {
+            //console.log(key)
+            if (answers.hasOwnProperty(key)) {
+                if(_.includes(attribute,key))
+                    answers[key] = answers[key] + 10
+          
+            }
+         }
+        localStorage.setItem('attributes', JSON.stringify(answers));
+        var retrievedObject = localStorage.getItem('attributes');
+        console.log('retrievedObject: ', JSON.parse(retrievedObject));
+        }
+
+    }
 	render(){
         var button1_visibility = this.state.button1_visibility
         var button2_visibility = this.state.button2_visibility
@@ -48,7 +101,7 @@ class ChildQues5 extends React.Component{
         </Modal>
               <div className="shadow-4 pa6 w-70 mv6 ml7 bg-washed-blue ba b--blue">
                 <button onClick={this.start.bind(this)} className={button1_visibility}>Start</button>
-                <button className={button2_visibility}>Click</button>
+                <button className={button2_visibility} onClick={this.submit.bind(this)}>Click</button>
               </div>
             </div>
 			);

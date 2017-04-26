@@ -21,6 +21,8 @@ import ChildQues4 from './onemin-writing/ChildQues4';
 import ChildQues5 from './click-game/ChildQues5';
 import ChildQues6 from './basic-maths/ChildQues6';
 import ChildQues7 from './higher-maths/ChildQues7';
+import ChildQues8 from './higher-maths/ChildQues8';
+import Result from './result/Result';
 
 
 import style from '../styles/app.scss';
@@ -40,6 +42,8 @@ ReactDOM.render((
     	<Route path='child5' component = {ChildQues5} ></Route>
         <Route path='child6' component = {ChildQues6} ></Route>
         <Route path='child7' component = {ChildQues7} ></Route>
+        <Route path='child8' component = {ChildQues8} ></Route>
+        <Route path='result' component = {Result} ></Route>
   </Router>
 ), document.getElementById(DOM_APP_EL_ID));
 

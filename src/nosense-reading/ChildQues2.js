@@ -8,9 +8,9 @@ class ChildQues2 extends React.Component{
 		super();
         this.state={
             counter: 10,
-            visibility: "o-05",
-            button_visibility:"o-90",
-            ans_visibility:'o-025',
+            visibility: "o-0",
+            button_visibility:"o-90 bg-green w5 grow hover-bg-green mh6",
+            ans_visibility:'o-0',
             modalIsOpen: true
         }
 	}
@@ -24,9 +24,13 @@ class ChildQues2 extends React.Component{
         this.setState({modalIsOpen: false});
     }
 
+    openModal(){
+        this.setState({modalIsOpen: true});
+    } 
+
     start(){
         this.setState({visibility:"o-90"});
-        this.setState({button_visibility:"o-025"});
+        this.setState({button_visibility:"o-0"});
         setInterval(this.counterStart.bind(this),1000);
     }
     counterStart(){
@@ -37,7 +41,7 @@ class ChildQues2 extends React.Component{
         }
         else
         {
-            this.setState({visibility:"o-025",ans_visibility:"o-90"});
+            this.setState({visibility:"o-0",ans_visibility:"o-90"});
         }
     }
     submit(){
@@ -85,7 +89,7 @@ class ChildQues2 extends React.Component{
         var ans_visibility = this.state.ans_visibility
 
 		return(
-            <div>
+            <div className="bg-washed-blue h-100">
                 <Navbar />
                 <Modal
                     isOpen={this.state.modalIsOpen}
@@ -96,24 +100,31 @@ class ChildQues2 extends React.Component{
                 >
                     <h1>No sense passage reading</h1>
                     <h2>Rules</h2>
-                    <p>please enter the rules that are to be followed by the parent. This space here tells the parent the about this exercise and the points that are to be noted</p>
+                    <p>The following is a passage in jumbled order. The parent should note down whether the child is able to understand the meaning of the passage correctly</p>
                     <button onClick={this.closeModal.bind(this)}>close</button>
                 </Modal>
-                <div className="shadow-4 pa6 w-70 mv6 ml7 bg-washed-blue ba b--blue">
-			        <div className={visibility}>
+                <div className="mv5 br2">
+                <div className="pa1 w-70  ml7 bg-lightest-blue ba b--lightest-blue tc navy" >
+                  <h1>No Sense Passage Reading</h1>
+                </div>
+                <div className="pa6 w-70 ml7 bg-white ba b--lightest-blue">
+			            <div className={visibility}>
                     <p>Timer:{counter}</p>
                     <p>Near the polar bear live North Pole. Year long all is cold The North Pole. Fur coats have polar bear and fat of lots to help warm keep them.
                     Swim polar bears like to. Swim at a time upto hundred miles they can. Called are cubs baby polar bears.</p>
+                  </div>
+                  <button onClick={this.start.bind(this)} className={button_visibility}>Start</button>
+                   <button onClick={this.openModal.bind(this)} className={button_visibility}>Instructions</button>
+
+                  <div className={ans_visibility}>
+                      <p>On the scale of 1-10, how would you rate your child's performance?</p>
+                      <input type="text" ref="ans1"className="w-10"/>
+                      <p>On the scale of 1-10, how would you rate your child's reading skill?</p>
+                      <input type="text" ref="ans2" className="w-10"/>
+                      <button onClick={this.submit.bind(this)}>Submit</button>
+                  </div>
                 </div>
-                <button onClick={this.start.bind(this)} className={button_visibility}>Start</button>
-                <div className={ans_visibility}>
-                    <p>On the scale of 1-10, how would you rate your child's performance?</p>
-                    <input type="text" ref="ans1"className="w-10"/>
-                    <p>On the scale of 1-10, how would you rate your child's reading skill?</p>
-                    <input type="text" ref="ans2" className="w-10"/>
-                    <button onClick={this.submit.bind(this)}>Submit</button>
-                </div>
-            </div>
+              </div>
             </div>
 			);
 	}

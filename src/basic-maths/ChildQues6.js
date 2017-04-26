@@ -2,6 +2,8 @@ import React from 'react';
 import Modal from 'react-modal';
 import { browserHistory } from "react-router";
 import _ from 'lodash';
+import Navbar from '../Navbar';
+
 class ChildQues6 extends React.Component{
     constructor(){
 		super();
@@ -9,6 +11,11 @@ class ChildQues6 extends React.Component{
             modalIsOpen: true
         }
 	}
+
+    openModal(){
+        this.setState({modalIsOpen: true});
+    } 
+
 	closeModal(){
         this.setState({modalIsOpen: false});
     }
@@ -56,7 +63,8 @@ class ChildQues6 extends React.Component{
     }
 	render(){
 		return(
-			<div>
+			<div className="bg-washed-blue h-100">
+                 <Navbar />
 				<Modal
                 isOpen={this.state.modalIsOpen}
                 onAfterOpen={this.afterOpenModal}
@@ -65,9 +73,14 @@ class ChildQues6 extends React.Component{
            		>
                     <h1>Basic mathematics</h1>
                     <h2>Rules</h2>
-                    <p>please enter the rules that are to be followed by the parent. This space here tells the parent the about this exercise and the points that are to be noted</p>
+                    <p>The child is presented with basic mathematic questions. The parent should note down whether the child is able to answer them correctly.</p>
                     <button onClick={this.closeModal.bind(this)}>close</button>
             	</Modal>
+                <div className="mv5 br2">
+                <div className="pa1 w-70  ml7 bg-lightest-blue ba b--lightest-blue tc navy" >
+                  <h1>Basic Mathematics</h1>
+                </div>
+                <div className="pa6 w-70 ml7 bg-white ba b--lightest-blue">
                 <h1>Multiply 3 by 10</h1>
                 <input type="text" placeholder="Answer me" ref="quesOne" />
                 
@@ -86,7 +99,11 @@ class ChildQues6 extends React.Component{
                 <h1>Which is smaller <span className="f1 lh-title">100 </span> or <span>1000</span></h1>
                 <input type="text" placeholder="Answer me" ref="quesSix" />
                 
-                <button onClick={this.submit.bind(this)}>Submit</button>
+                <button onClick={this.submit.bind(this)} className="o-90 bg-green w5 grow hover-bg-green mh6">Submit</button>
+                <button onClick={this.openModal.bind(this)} className="o-90 bg-green w5 grow hover-bg-green mh6">Instructions</button>
+
+                </div>
+                </div>
 			</div>
 			)
 	}

@@ -5,6 +5,7 @@ import { browserHistory } from "react-router";
 import _ from 'lodash';
 
 
+
 class ChildQues1 extends React.Component{
 	constructor(){
 		super();
@@ -27,7 +28,7 @@ class ChildQues1 extends React.Component{
 
     start(){
         this.setState({visibility:"o-90"});
-        this.setState({button_visibility:"o-025"});
+        this.setState({button_visibility:"o-0"});
         setInterval(this.counterStart.bind(this),1000);
     }
     counterStart(){
@@ -38,7 +39,7 @@ class ChildQues1 extends React.Component{
         }
        else
        {
-         this.setState({visibility:"o-025",ans_visibility:"o-90"});
+         this.setState({visibility:"o-0",ans_visibility:"o-90"});
        }
 
     }
@@ -87,7 +88,7 @@ class ChildQues1 extends React.Component{
         var counter = this.state.counter
         var ans_visibility = this.state.ans_visibility
 		return(
-            <div>
+            <div className="bg-washed-blue h-100">
               <Navbar />
               <Modal
                 isOpen={this.state.modalIsOpen}
@@ -96,16 +97,17 @@ class ChildQues1 extends React.Component{
                 // style={customStyles}
                 contentLabel="Example Modal"
                 >
-                  <h1>Memory Game</h1>
-                  <h2>Rules</h2>
-                  <p>please enter the rules that are to be followed by the parent. This space here tells the parent the about this exercise and the points that are to be noted</p>
-                  <button onClick={this.closeModal.bind(this)}>close</button>
+                  <h1 className="tc">Memory Game</h1>
+                  <h1 className="tc">Rules</h1>
+                  <p>This game consist of 10 words that will appear for 60 seconds. The child is required to recall the words and the parents are required to note down
+                  the number of words the child is able to memorise correctly.</p>
+                  <button onClick={this.closeModal.bind(this)} className="bg-green w5 grow hover-bg-green mh6">close</button>
               </Modal>
               <div className="mv5 br2">
                 <div className="pa1 w-70  ml7 bg-lightest-blue ba b--lightest-blue tc navy" >
                   <h1>Memory Game</h1>
                 </div>
-                <div className="pa6 w-70 ml7 bg-washed-blue ba b--lightest-blue">
+                <div className="pa6 w-70 ml7 bg-white ba b--lightest-blue">
 			              <div className={visibility}>
                       <p>Timer:{counter}</p>
                       <h1 className="lh-title">Cat</h1>

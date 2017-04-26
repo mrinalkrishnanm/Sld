@@ -17,10 +17,7 @@ class Navbar extends React.Component{
 	render(){
 		return(
             <div className="pa3 bg-dark-blue white bb bw3 b--gold ">
-              <div className="dtc ph5"> SLD APP</div>
-              <div className="dtc ph5 grow"  onClick={this.toDashboard}> Dashboard </div>
-              <div className="dtc ph5 grow"  onClick={this.toNotePage}> View score</div>
-              <div className="dtc ph5 grow "> logout</div>
+              <h1 className="dtc ph7 baskerville f2 lh-copy mr5"> SLD APP</h1>
             </div>
 			);
 	}

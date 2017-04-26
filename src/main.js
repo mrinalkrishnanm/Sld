@@ -21,7 +21,6 @@ import ChildQues4 from './onemin-writing/ChildQues4';
 import ChildQues5 from './click-game/ChildQues5';
 import ChildQues6 from './basic-maths/ChildQues6';
 import ChildQues7 from './higher-maths/ChildQues7';
-import ChildQues8 from './higher-maths/ChildQues8';
 import Result from './result/Result';
 
 
@@ -35,15 +34,14 @@ ReactDOM.render((
     	<Route path='/login' component = {Login} > </Route>
     	<Route path='/register' component = {Register} > </Route>
     	<Route path='/quiz' component = {Quiz} > </Route> 
-    	<Route path='child1' component = {ChildQues1} ></Route>
-    	<Route path='child2' component = {ChildQues2} ></Route>
-    	<Route path='child3' component = {ChildQues3} ></Route>
-    	<Route path='child4' component = {ChildQues4} ></Route>
-    	<Route path='child5' component = {ChildQues5} ></Route>
-        <Route path='child6' component = {ChildQues6} ></Route>
-        <Route path='child7' component = {ChildQues7} ></Route>
-        <Route path='child8' component = {ChildQues8} ></Route>
-        <Route path='result' component = {Result} ></Route>
+    	<Route path='/child1' component = {ChildQues1} ></Route>
+    	<Route path='/child2' component = {ChildQues2} ></Route>
+    	<Route path='/child3' component = {ChildQues3} ></Route>
+    	<Route path='/child4' component = {ChildQues4} ></Route>
+    	<Route path='/child5' component = {ChildQues5} ></Route>
+        <Route path='/child6' component = {ChildQues6} ></Route>
+        <Route path='/child7' component = {ChildQues7} ></Route>
+        <Route path='/result' component = {Result} ></Route>
   </Router>
 ), document.getElementById(DOM_APP_EL_ID));
 

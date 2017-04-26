@@ -96,7 +96,7 @@ class ChildQues5 extends React.Component{
             >
             <h1>Click Game</h1>
             <h2>Rules</h2>
-            <p>please enter the rules that are to be followed by the parent. This space here tells the parent the about this exercise and the points that are to be noted</p>
+            <p>TIn this game a certain number of button will appear in random position at random time. The parent should note down whether the child is able to respond quickly and press the buttons as they appear.</p>
             <button onClick={this.closeModal.bind(this)}>close</button>
         </Modal>
               <div className="shadow-4 pa6 w-70 mv6 ml7 bg-washed-blue ba b--blue">

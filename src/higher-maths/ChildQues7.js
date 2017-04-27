@@ -80,8 +80,8 @@ class ChildQues7 extends React.Component{
                     <input type="text" placeholder="Answer me" ref="quesThree"  />
                     <h1>There are 96 cupcakes for 8 children to share. How much will each person get if they share equally?</h1>
                     <input type="text" placeholder="Answer me" ref="quesFour" />
-                    <button onClick={this.submit.bind(this)} className="o-90 bg-green w5 grow hover-bg-green mh6">Submit</button>
-                    <button onClick={this.openModal.bind(this)} className="o-90 bg-green w5 grow hover-bg-green mh6">Instructions</button>
+                    <button onClick={this.submit.bind(this)} className="o-90 bg-green w5 grow hover-bg-green mh4">Submit</button>
+                    <button onClick={this.openModal.bind(this)} className="o-90 bg-green w5 grow hover-bg-green mh4">Instructions</button>
 
                 </div>
             </div>

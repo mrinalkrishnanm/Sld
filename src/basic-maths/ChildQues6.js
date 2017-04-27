@@ -99,8 +99,8 @@ class ChildQues6 extends React.Component{
                 <h1>Which is smaller <span className="f1 lh-title">100 </span> or <span>1000</span></h1>
                 <input type="text" placeholder="Answer me" ref="quesSix" />
                 
-                <button onClick={this.submit.bind(this)} className="o-90 bg-green w5 grow hover-bg-green mh6">Submit</button>
-                <button onClick={this.openModal.bind(this)} className="o-90 bg-green w5 grow hover-bg-green mh6">Instructions</button>
+                <button onClick={this.submit.bind(this)} className="o-90 bg-green w5 grow hover-bg-green mh4">Submit</button>
+                <button onClick={this.openModal.bind(this)} className="o-90 bg-green w5 grow hover-bg-green mh4">Instructions</button>
 
                 </div>
                 </div>

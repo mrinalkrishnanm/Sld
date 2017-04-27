@@ -2,11 +2,18 @@ import React from 'react';
 import API from './API';
 import Request from 'superagent';
 import _ from 'lodash';
+import Navbar from '../Navbar';
 
 class Result extends React.Component{
 
+  constructor() {
+    super()
+    this.state = {
+      result: ""
+    }
+  }
   componentWillMount(){
-    this.getResult();
+    this.getResult()
   }
 
   getResult(){
@@ -28,7 +35,11 @@ class Result extends React.Component{
     Request.post("http://localhost:3000/users/foo")
     .send({value: array})
     .end((err,res) => {
-      console.log(res)
+      console.log(res.text)
+      if(res.status == 200)
+        this.setState({
+          result: res.text
+        })
     })
     // 	var value=[1,0,0,0,0,1,0,1,0,1,1,0,1,1,1,0];
     // 	var data={
@@ -45,9 +56,28 @@ class Result extends React.Component{
     console.log(array);
   }
   render(){
+    var retrievedObject = localStorage.getItem('attributes');
+    var answers = JSON.parse(retrievedObject);
+    console.log(answers)
+     
+    var display = Object.keys(answers).map(function(key, index) {
+    return <h2> {key} : {answers[key]} </h2> 
+    });
     return(
       <div>
-      <h1>helo</h1>
+      <Navbar />
+      <div className="mv5 br2">
+       <div className="pa1 w-70  ml7 bg-lightest-blue ba b--lightest-blue tc navy" >
+                  <h1>Result</h1>
+       </div>
+      <div className="pa6 w-70 ml7 bg-white ba b--lightest-blue">
+      <h2>THE STUDENT IS: {this.state.result}</h2>
+      <br />
+      {display}
+      
+
+      </div>
+      </div>
       </div>
     );
   }

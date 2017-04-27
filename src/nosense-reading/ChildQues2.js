@@ -9,7 +9,7 @@ class ChildQues2 extends React.Component{
         this.state={
             counter: 10,
             visibility: "o-0",
-            button_visibility:"o-90 bg-green w5 grow hover-bg-green mh6",
+            button_visibility:"o-90 bg-green w5 grow hover-bg-green mh4",
             ans_visibility:'o-0',
             modalIsOpen: true
         }
@@ -108,14 +108,15 @@ class ChildQues2 extends React.Component{
                   <h1>No Sense Passage Reading</h1>
                 </div>
                 <div className="pa6 w-70 ml7 bg-white ba b--lightest-blue">
+                 
+                  <button onClick={this.start.bind(this)} className={button_visibility}>Start</button>
+                   <button onClick={this.openModal.bind(this)} className={button_visibility}>Instructions</button>
+
 			            <div className={visibility}>
                     <p>Timer:{counter}</p>
                     <p>Near the polar bear live North Pole. Year long all is cold The North Pole. Fur coats have polar bear and fat of lots to help warm keep them.
                     Swim polar bears like to. Swim at a time upto hundred miles they can. Called are cubs baby polar bears.</p>
                   </div>
-                  <button onClick={this.start.bind(this)} className={button_visibility}>Start</button>
-                   <button onClick={this.openModal.bind(this)} className={button_visibility}>Instructions</button>
-
                   <div className={ans_visibility}>
                       <p>On the scale of 1-10, how would you rate your child's performance?</p>
                       <input type="text" ref="ans1"className="w-10"/>

@@ -9,7 +9,7 @@ class ChildQues3 extends React.Component{
         this.state={
             counter: 10,
             visibility: "o-0",
-            button_visibility:"o-90 bg-green w5 grow hover-bg-green mh6",
+            button_visibility:"o-90 bg-green w5 grow hover-bg-green mh4",
             ans_visibility:'o-0',
             modalIsOpen: true
         }
@@ -122,14 +122,15 @@ class ChildQues3 extends React.Component{
                 <h1>No Sense Passage Writing</h1>
              </div>
             <div className="pa6 w-70 ml7 bg-white ba b--lightest-blue">
+            
+            <button onClick={this.start.bind(this)} className={button_visibility}>Start</button>
+            <button onClick={this.openModal.bind(this)} className={button_visibility}>Instructions</button>
              <div className={visibility}>
                 <p>Timer:{counter}</p>
                 <p>An person is a astronaut to go into trained outer space. An must complete of training before astronaut two years flying
                 before into space. Astronaut are space mission able to go on they have training their once completed. space missions 
                 during perform experiments astronaut and repair satellites.</p>
              </div>
-            <button onClick={this.start.bind(this)} className={button_visibility}>Start</button>
-            <button onClick={this.openModal.bind(this)} className={button_visibility}>Instructions</button>
 
              <div className={ans_visibility}>
                 <p>On the scale of 1-10, rate your child's spelling?</p>

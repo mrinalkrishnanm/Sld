@@ -9,7 +9,7 @@ class ChildQues4 extends React.Component{
         this.state={
             counter: 10,
             visibility: "o-0",
-            button_visibility:"o-90 bg-green w5 grow hover-bg-green mh6",
+            button_visibility:"o-90 bg-green w5 grow hover-bg-green mh4",
             ans_visibility:'o-0',
             modalIsOpen: true
         }
@@ -125,14 +125,15 @@ class ChildQues4 extends React.Component{
                   <h1>One Minute Passage Writing</h1>
                 </div>
              <div className="pa6 w-70 ml7 bg-white ba b--lightest-blue">
+              <button onClick={this.start.bind(this)} className={button_visibility}>Start</button>
+            <button onClick={this.openModal.bind(this)} className={button_visibility}>Instructions</button>
 			 <div className={visibility}>
                 <p>Timer:{counter}</p>
                 <p>For although a man is judged by his actions, by what he has said and done, a man judges himself by what he might have done 
                 - a judgment that is necessarily hampered, bot only the scope and limits of his imagination, but by the ever-changing measure of his
                 doubt and self-esteem. </p>
              </div>
-            <button onClick={this.start.bind(this)} className={button_visibility}>Start</button>
-            <button onClick={this.openModal.bind(this)} className={button_visibility}>Instructions</button>
+           
 
              <div className={ans_visibility}>
                 <p>On the scale of 1-10, rate your child's spelling?</p>

@@ -12,7 +12,7 @@ class ChildQues1 extends React.Component{
         this.state={
             counter: 10,
             visibility: "o-0",
-            button_visibility:"o-90 bg-green w5 grow hover-bg-green mh6",
+            button_visibility:"o-90 bg-green w5 grow hover-bg-green mh4",
             ans_visibility:'o-0',
             modalIsOpen: true       
           }
@@ -104,11 +104,14 @@ class ChildQues1 extends React.Component{
                   <button onClick={this.closeModal.bind(this)} className="bg-green w5 grow hover-bg-green mh6">close</button>
               </Modal>
               <div className="mv5 br2">
+                
                 <div className="pa1 w-70  ml7 bg-lightest-blue ba b--lightest-blue tc navy" >
                   <h1>Memory Game</h1>
                 </div>
                 <div className="pa6 w-70 ml7 bg-white ba b--lightest-blue">
-			              <div className={visibility}>
+			                 <button onClick={this.start.bind(this)} className={button_visibility}>Start</button>
+                    <button onClick={this.openModal.bind(this)} className={button_visibility}>Instructions</button>
+                     <div className={visibility}>
                       <p>Timer:{counter}</p>
                       <h1 className="lh-title">Cat</h1>
                       <h1 className="lh-title">Farm</h1>
@@ -121,9 +124,6 @@ class ChildQues1 extends React.Component{
                       <h1 className="lh-title">Sentence</h1>
                       <h1 className="lh-title">Knowledge</h1>
                     </div>
-                    <button onClick={this.start.bind(this)} className={button_visibility}>Start</button>
-                    <button onClick={this.openModal.bind(this)} className={button_visibility}>Instructions</button>
-
                      <div className={ans_visibility}>
                       <h1>For Parents</h1>
                       <p>How many words was your child able to recollect</p>

@@ -98,8 +98,8 @@ class ChildQues2 extends React.Component{
                     // style={customStyles}
                     contentLabel="Example Modal"
                 >
-                    <h1>No sense passage reading</h1>
-                    <h2>Rules</h2>
+                    <h1 className="tc">No sense passage reading</h1>
+                    <h2 className="tc">Rules</h2>
                     <p>The following is a passage in jumbled order. The parent should note down whether the child is able to understand the meaning of the passage correctly</p>
                     <button onClick={this.closeModal.bind(this)}>close</button>
                 </Modal>

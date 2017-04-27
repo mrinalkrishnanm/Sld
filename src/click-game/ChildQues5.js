@@ -11,7 +11,8 @@ class ChildQues5 extends React.Component{
             modalIsOpen: true,
             score:5,
             button1_visibility:"o-90",
-            button2_visibility:"o-0"
+            button2_visibility:"o-0",
+            button3_visibility:"o-0"
         }
 	}
  
@@ -41,27 +42,24 @@ class ChildQues5 extends React.Component{
            }
            this.setState({counter: this.state.counter-1});
             console.log(this.state.counter)
-
         }
         else if(this.state.counter==0)
         {
             this.setState({button2_visibility:"o-0"});
-             browserHistory.push("/child6");
+             this.setState({button3_visibility:"o-90"});
 
         }
         else
         {
             this.setState({button2_visibility:"o-0"});
-            this.setState({counter: this.state.counter-1});
             console.log(this.state.counter)
-
+            this.setState({counter: this.state.counter-1});
         }
         console.log(this.state.score);
         
     }
-    submit(){
-        this.setState({score: this.state.score-1});
-        if(this.state.score<5)
+    next(){
+         if(this.state.score>3)
         {
             var retrievedObject = localStorage.getItem('attributes');
             var answers = JSON.parse(retrievedObject);
@@ -70,7 +68,7 @@ class ChildQues5 extends React.Component{
             //console.log(key)
             if (answers.hasOwnProperty(key)) {
                 if(_.includes(attribute,key))
-                    answers[key] = answers[key] + 10
+                    answers[key] = answers[key] + 30
           
             }
          }
@@ -78,11 +76,18 @@ class ChildQues5 extends React.Component{
         var retrievedObject = localStorage.getItem('attributes');
         console.log('retrievedObject: ', JSON.parse(retrievedObject));
         }
+        browserHistory.push("/child6");
+    }
+    submit(){
+        this.setState({score: this.state.score-1});
+         console.log(this.state.score)
 
     }
 	render(){
         var button1_visibility = this.state.button1_visibility
         var button2_visibility = this.state.button2_visibility
+        var button3_visibility = this.state.button3_visibility
+
         var counter = this.state.counter
 		return(
             <div>
@@ -102,6 +107,7 @@ class ChildQues5 extends React.Component{
               <div className="shadow-4 pa6 w-70 mv6 ml7 bg-washed-blue ba b--blue">
                 <button onClick={this.start.bind(this)} className={button1_visibility}>Start</button>
                 <button className={button2_visibility} onClick={this.submit.bind(this)}>Click</button>
+                <button className={button3_visibility} onClick={this.next.bind(this)}>Submit</button>
               </div>
             </div>
 			);

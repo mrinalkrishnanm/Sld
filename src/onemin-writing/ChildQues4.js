@@ -55,7 +55,7 @@ class ChildQues4 extends React.Component{
             //console.log(key)
             if (answers.hasOwnProperty(key)) {
                 if(_.includes(attribute,key))
-                    answers[key] = answers[key] + 20
+                    answers[key] = answers[key] + 30
           
             }
          }
